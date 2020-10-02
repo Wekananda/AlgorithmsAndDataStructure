@@ -8,7 +8,10 @@ void bubbleSort(int array[], int size) {
      * and the other for comparison 
      */
 
+    bool sorted = true; 
+
     for(int step=0;step-size-1;step++){
+        sorted = true;
         for(int i=0;i<size-step-1;i++) {
 
             if(array[i] > array[i+1]) {
@@ -17,8 +20,10 @@ void bubbleSort(int array[], int size) {
                 int temp = array[i];
                 array[i] = array[i+1];
                 array[i+1] = temp;
+                sorted = false;
             }
         }
+        if(sorted) break;
     }
 }
 
